@@ -2,12 +2,14 @@ import sys
 import os
 from face_alignment import mtcnn
 import argparse
+import torch
 from PIL import Image
 from tqdm import tqdm
 import random
 from datetime import datetime
 #device='cuda:0', 'cpu'
-mtcnn_model = mtcnn.MTCNN(device='cpu', crop_size=(112, 112))
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+mtcnn_model = mtcnn.MTCNN(device=device, crop_size=(112, 112))
  
 def set_mtcnn_model(device, crop_size=(112, 112)):
     mtcnn_model = mtcnn.MTCNN(device = device, crop_size=crop_size)
