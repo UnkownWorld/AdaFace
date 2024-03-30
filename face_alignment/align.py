@@ -7,8 +7,8 @@ from PIL import Image
 from tqdm import tqdm
 import random
 from datetime import datetime
-#device='cuda:0' 默认cpu
-mtcnn_model = mtcnn.MTCNN(device=torch.device('cuda' if torch.cuda.is_available() else 'cpu'), crop_size=(112, 112))
+#device='cuda:0', 'cpu'
+mtcnn_model = mtcnn.MTCNN(device='cpu', crop_size=(112, 112))
  
 def set_mtcnn_model(device, crop_size=(112, 112)):
     mtcnn_model = mtcnn.MTCNN(device = device, crop_size=crop_size)
