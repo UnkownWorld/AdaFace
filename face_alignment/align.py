@@ -1,6 +1,6 @@
 import sys
 import os
-
+import torch
 from face_alignment import mtcnn
 import argparse
 from PIL import Image
